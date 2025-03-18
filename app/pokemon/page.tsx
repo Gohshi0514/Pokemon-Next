@@ -6,9 +6,15 @@ export default function PokemonSearchPage({
   searchParams: { id: string };
 }) {
   const id = searchParams.id;
+
   if (id) {
-    redirect(`/pokemon/${id}`);
+    const pokemonId = parseInt(id);
+    if (!isNaN(pokemonId) && pokemonId >= 1 && pokemonId <= 898) {
+      redirect(`/pokemon/${pokemonId}`);
+    }
   }
-  // IDがない場合は、デフォルトのページやエラーメッセージを表示できます
-  return <div>ポケモン番号を入力してください。</div>;
+
+  // ランダムなポケモンにリダイレクト
+  const randomId = Math.floor(Math.random() * 898) + 1;
+  redirect(`/pokemon/${randomId}`);
 }
