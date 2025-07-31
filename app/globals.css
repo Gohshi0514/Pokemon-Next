@@ -14,70 +14,31 @@
   --pokedex-yellow: #ffcb05;
   --pokedex-blue: #3d7dca;
   --pokedex-border: #222224;
+  
+  /* ポケモンタイプの色 */
+  --pokemon-normal: #A8A878;
+  --pokemon-fire: #F08030;
+  --pokemon-water: #6890F0;
+  --pokemon-electric: #F8D030;
+  --pokemon-grass: #78C850;
+  --pokemon-ice: #98D8D8;
+  --pokemon-fighting: #C03028;
+  --pokemon-poison: #A040A0;
+  --pokemon-ground: #E0C068;
+  --pokemon-flying: #A890F0;
+  --pokemon-psychic: #F85888;
+  --pokemon-bug: #A8B820;
+  --pokemon-rock: #B8A038;
+  --pokemon-ghost: #705898;
+  --pokemon-dragon: #7038F8;
+  --pokemon-dark: #705848;
+  --pokemon-steel: #B8B8D0;
+  --pokemon-fairy: #EE99AC;
 }
 
-body {
-  font-family: 'Roboto', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', sans-serif;
-  background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
-  color: #2c3e50;
-  min-height: 100vh;
-}
+/* Tailwindで管理するためbodyスタイルを削除 */
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 64px); /* ヘッダーの高さを引いた値 */
-  padding: 2rem 0;
-}
-
-/* ヘッダースタイル */
-header {
-  background-color: var(--pokedex-red) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 4px solid var(--pokedex-dark-red);
-}
-
-header nav {
-  padding: 0.5rem 0;
-}
-
-header a {
-  position: relative;
-  text-decoration: none !important;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-header .text-2xl {
-  display: flex;
-  align-items: center;
-}
-
-header .text-2xl::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: white;
-  border-radius: 50%;
-  margin-right: 8px;
-  border: 2px solid var(--pokedex-dark-red);
-}
-
-header ul a {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  transition: all 0.2s ease;
-}
-
-header ul a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
+/* ヘッダースタイルはTailwindで管理 */
 
 /* ポケデックスコンテナ */
 .pokedex-container {
@@ -432,25 +393,7 @@ header ul a:hover {
   border: 1px solid rgba(227, 53, 13, 0.3);
 }
 
-/* ポケモンタイプの色 */
-.type-normal { background-color: #A8A878; }
-.type-fire { background-color: #F08030; }
-.type-water { background-color: #6890F0; }
-.type-electric { background-color: #F8D030; }
-.type-grass { background-color: #78C850; }
-.type-ice { background-color: #98D8D8; }
-.type-fighting { background-color: #C03028; }
-.type-poison { background-color: #A040A0; }
-.type-ground { background-color: #E0C068; }
-.type-flying { background-color: #A890F0; }
-.type-psychic { background-color: #F85888; }
-.type-bug { background-color: #A8B820; }
-.type-rock { background-color: #B8A038; }
-.type-ghost { background-color: #705898; }
-.type-dragon { background-color: #7038F8; }
-.type-dark { background-color: #705848; }
-.type-steel { background-color: #B8B8D0; }
-.type-fairy { background-color: #EE99AC; }
+/* ポケモンタイプの色はCSS変数で管理 */
 
 @media (max-width: 480px) {
   .pokedex-container {

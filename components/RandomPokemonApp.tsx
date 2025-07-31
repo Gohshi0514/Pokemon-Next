@@ -148,7 +148,8 @@ export default function RandomPokemonApp() {
                 {pokemon.types.map((type, index) => (
                   <span
                     key={index}
-                    className={`type-badge type-${type.type.name}`}
+                    className="type-badge"
+                    style={{ backgroundColor: `var(--pokemon-${type.type.name})` }}
                   >
                     {typeTranslations[type.type.name] || type.type.name}
                   </span>
